@@ -1036,6 +1036,8 @@ function Collection() {
 
 
 function InstallAppSection() {
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+
 
   const [activeImage, setActiveImage] = useState(0);
 
@@ -1052,6 +1054,21 @@ function InstallAppSection() {
     return () => clearInterval(interval);
 
   }, []);
+
+
+  useEffect(() => {
+
+  const handler = (e) => {
+    e.preventDefault();
+    setDeferredPrompt(e);
+  };
+
+  window.addEventListener("beforeinstallprompt", handler);
+
+  return () =>
+    window.removeEventListener("beforeinstallprompt", handler);
+
+}, []);
 
   const WEBSITE_URL = "https://bhardwaj-murti-art.vercel.app/";
 
@@ -1104,13 +1121,38 @@ function InstallAppSection() {
               {/* BUTTONS */}
               <div className="flex flex-wrap gap-4 mb-8">
 
-                <a
-                  href={WEBSITE_URL}
-                  className="group px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-semibold flex items-center gap-2 hover:scale-105 transition-all"
-                >
-                  <Download size={18} />
-                  Install App
-                </a>
+               <button
+  onClick={async () => {
+
+    if (!deferredPrompt) {
+
+      alert("Install option not available yet");
+      return;
+
+    }
+
+    deferredPrompt.prompt();
+
+    const { outcome } = await deferredPrompt.userChoice;
+
+    if (outcome === "accepted") {
+
+      console.log("App installed");
+
+    }
+
+    setDeferredPrompt(null);
+
+  }}
+
+  className="group px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-semibold flex items-center gap-2 hover:scale-105 transition-all"
+>
+
+  <Download size={18} />
+
+  Install App
+
+</button>
 
                 <button
                   onClick={() =>
