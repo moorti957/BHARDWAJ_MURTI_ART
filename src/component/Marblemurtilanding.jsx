@@ -415,9 +415,9 @@ const [showWhatsPopup, setShowWhatsPopup] = useState(false);
           <div>
             <div className="grid grid-cols-2 gap-4 mb-8">
               {[
-                { n: "10", s: "+", label: "Years of Excellence", color: "from-amber-600/20 to-yellow-600/10" },
-                { n: "500", s: "+", label: "Happy Customers", color: "from-rose-900/20 to-red-900/10" },
-                { n: "200", s: "+", label: "Murti Designs", color: "from-indigo-900/20 to-purple-900/10" },
+                { n: "50+", s: "+", label: "Years of Excellence", color: "from-amber-600/20 to-yellow-600/10" },
+                { n: "2500", s: "+", label: "Happy Customers", color: "from-rose-900/20 to-red-900/10" },
+                { n: "3000", s: "+", label: "Murti Designs", color: "from-indigo-900/20 to-purple-900/10" },
                 { n: "98", s: "%", label: "Satisfaction Rate", color: "from-green-900/20 to-emerald-900/10" },
               ].map((s, i) => (
                 <motion.div key={i} variants={scaleIn} initial="hidden" animate={inView ? "visible" : "hidden"} custom={i}
