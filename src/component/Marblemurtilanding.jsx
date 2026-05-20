@@ -43,9 +43,9 @@ import lu from "../assets/img/lu.webp";
 const NAV_LINKS = ["Home", "About", "Collection", "Videos", "Reviews", "Contact"];
 
 const STATS = [
-  { value: "10+", label: "Years Experience" },
-  { value: "500+", label: "Happy Customers" },
-  { value: "200+", label: "Murti Designs" },
+  { value: "50+", label: "Years Experience" },
+  { value: "2900+", label: "Happy Customers" },
+  { value: "1500+", label: "Murti Designs" },
   { value: "98%", label: "Satisfaction Rate" },
 ];
 
