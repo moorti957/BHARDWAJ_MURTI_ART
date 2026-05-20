@@ -102,14 +102,14 @@ const VIDEOS = [
 const TESTIMONIALS = [
   { name: "Rajesh Sharma", city: "Jaipur", rating: 5, text: "Absolutely divine craftsmanship. The Ganesh Ji murti I ordered is breathtaking. Every detail is perfect. Highly recommended!", verified: true },
   { name: "Priya Gupta", city: "Delhi", rating: 5, text: "Ordered a Radha Krishna murti for our new home. The quality of marble and the intricate work is beyond expectations. Will order again!", verified: true },
-  { name: "Anand Patel", city: "Mumbai", rating: 5, text: "10 years of experience shows in every piece. The Shiva Lingam we got is magnificent. Puja feels more sacred now.", verified: true },
-  { name: "Sunita Agarwal", city: "Bangalore", rating: 5, text: "IndiaMART verified seller. Very trustworthy. Packaging was superb, delivery on time. The murti is exactly as shown.", verified: true },
+  { name: "Anand Patel", city: "Mumbai", rating: 5, text: "50+ years of experience shows in every piece. The Shiva Lingam we got is magnificent. Puja feels more sacred now.", verified: true },
+  { name: "Sunita Agarwal", city: "Bangalore", rating: 5, text: "Justdial verified seller. Very trustworthy. Packaging was superb, delivery on time. The murti is exactly as shown.", verified: true },
 ];
 
 const WHY_US = [
   { icon: Gem, title: "Premium Marble", desc: "Only finest Makrana and Italian marble sourced directly", color: "#B8860B" },
   { icon: Heart, title: "Handcrafted Love", desc: "Every piece hand-sculpted by master artisans with decades of experience", color: "#8B0000" },
-  { icon: Shield, title: "Trusted Quality", desc: "Justdial verified seller with 10+ years of excellence", color: "#2F4F4F" },
+  { icon: Shield, title: "Trusted Quality", desc: "Justdial verified seller with 50+ years of excellence", color: "#2F4F4F" },
   { icon: Truck, title: "Safe Delivery", desc: "Expert packaging ensuring your sacred murti arrives perfectly", color: "#4B0082" },
   { icon: Users, title: "Custom Orders", desc: "Get your deity sculpted in any size, pose, or specification", color: "#8B4513" },
   { icon: Award, title: "Expert Team", desc: "Team of 25+ skilled artisans trained in traditional Rajasthani craft", color: "#006400" },
@@ -366,7 +366,7 @@ function About() {
 const [showWhatsPopup, setShowWhatsPopup] = useState(false);
 
   const badges = [
-    { icon: Shield, text: "IndiaMART Verified" },
+    { icon: Shield, text: "Justdial Verified" },
     { icon: Award, text: "Premium Quality" },
     { icon: CheckCircle, text: "GST Registered" },
     { icon: Crown, text: "Master Artisans" },
