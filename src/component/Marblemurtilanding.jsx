@@ -36,6 +36,7 @@ import shop2 from "../assets/img/2.jpg";
 import shop3 from "../assets/img/3.jpg";
 import shop4 from "../assets/img/4.jpg";
 import shop5 from "../assets/img/5.jpg";
+import lu from "../assets/img/lu.webp";
 
 // ─── DATA ───────────────────────────────────────────────────────────────────
 
@@ -61,7 +62,7 @@ const PRODUCTS = [
   { id: 1, name: "Ganesh Marble Statue", material: " White Makrana Marble",Image:Ganesh,  category: "Ganesh", emoji: "🐘", gradient: "from-amber-50 to-yellow-100", accent: "#B8860B" },
   { id: 2, name: "Krishna Marble Statue", material: "White Marble",Image:Krishna, category: "Krishna", emoji: "🦚", gradient: "from-blue-50 to-indigo-100", accent: "#4B0082" },
   { id: 3, name: "Shiv Marble Statue", material: "White Marble ", Image:Shiv, category: "Shiva", gradient: "from-slate-100 to-gray-200", accent: "#2F4F4F" },
-  { id: 4, name: "Lakshmi Ji", material: "Pink Marble",  category: "Lakshmi", emoji: "🪷", gradient: "from-rose-50 to-pink-100", accent: "#8B0000" },
+  { id: 4, name: "Lakshmi Ji", material: "Pink Marble",  category: "Lakshmi", Image:lu, gradient: "from-rose-50 to-pink-100", accent: "#8B0000" },
   { id: 5, name: "Human Marble Statue", material: "White Marble ", Image:Human,  category: "Human", emoji: "🎵", gradient: "from-yellow-50 to-amber-100", accent: "#DAA520" },
   { id: 6, name: "Hanuman Marble Statue", material: "Red Agra Marble",Image:Hanuman,   category: "Hanuman", emoji: "🌅", gradient: "from-orange-50 to-red-100", accent: "#8B4513" },
 ];
