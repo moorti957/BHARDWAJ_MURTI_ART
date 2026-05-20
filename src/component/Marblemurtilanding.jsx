@@ -29,7 +29,7 @@ import logo from "../assets/img/download.png";
 import Shiv from "../assets/img/shiv.jpg";
 import Ganesh from "../assets/img/Ganesh..jpg";
 import Krishna from "../assets/img/Krishna.jpg";
-import Hanuman from "../assets/img/hanuman.jpg";
+import Hanuman from "../assets/img/Hanuman.jpg";
 import Human from "../assets/img/human.jpg";
 import shop1 from "../assets/img/1.jpg";
 import shop2 from "../assets/img/2.jpg";
