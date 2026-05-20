@@ -16,7 +16,7 @@ export default defineConfig({
       manifest: {
         name: 'Bhardwaj Murti Art',
 
-        short_name: 'MurtiArt',
+        short_name: 'BhardwajMurtiArt',
 
         description:
           'Premium Marble Murti Collection',

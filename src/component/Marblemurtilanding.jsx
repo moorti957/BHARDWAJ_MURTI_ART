@@ -362,8 +362,16 @@ function StatCounter({ target, suffix = "" }) {
 function About() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [showCallPopup, setShowCallPopup] = useState(false);
+const [showCallPopup, setShowCallPopup] = useState(false);
 const [showWhatsPopup, setShowWhatsPopup] = useState(false);
+
+const closeAllPopups = () => {
+  setShowCallPopup(false);
+  setShowWhatsPopup(false);
+};
+
+// CLOSE ALL
+
 
   const badges = [
     { icon: Shield, text: "Justdial Verified" },
@@ -607,12 +615,21 @@ const [showWhatsPopup, setShowWhatsPopup] = useState(false);
 
 
 
-<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
+<div
+  className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8"
+  onClick={closeAllPopups}
+>
 
   {/* CALL CARD */}
   <div className="relative">
     <button
-      onClick={() => setShowCallPopup(!showCallPopup)}
+      onClick={(e) => {
+  e.stopPropagation();
+
+  setShowWhatsPopup(false);
+
+  setShowCallPopup(!showCallPopup);
+}}
       className="w-full flex flex-col items-center justify-center bg-white/5 border border-amber-600/20 rounded-2xl p-5 hover:bg-amber-500/10 transition-all duration-300"
     >
       <Phone className="text-amber-400 mb-3" size={24} />
@@ -634,11 +651,42 @@ const [showWhatsPopup, setShowWhatsPopup] = useState(false);
     <AnimatePresence>
       {showCallPopup && (
         <motion.div
-          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 10, scale: 0.95 }}
-          className="absolute z-50 left-1/2 -translate-x-1/2 mt-3 w-72 bg-stone-900 border border-amber-600/20 rounded-2xl p-4 shadow-2xl backdrop-blur-xl"
-        >
+  onClick={(e) => e.stopPropagation()}
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  exit={{ opacity: 0, scale: 0.9 }}
+  className="
+    fixed sm:absolute
+    z-[999]
+    left-1/2 top-1/2
+    sm:top-auto
+    sm:mt-3
+    -translate-x-1/2
+    -translate-y-1/2
+    sm:translate-y-0
+    w-[90%] sm:w-72
+    bg-stone-900
+    border border-amber-600/20
+    rounded-3xl
+    p-4
+    shadow-2xl
+    backdrop-blur-xl
+  "
+>
+  <div className="flex items-center justify-between mb-4">
+
+  <h3 className="text-amber-300 text-sm font-semibold tracking-wide">
+    Contact Details
+  </h3>
+
+  <button
+    onClick={closeAllPopups}
+    className="w-8 h-8 rounded-full bg-white/5 hover:bg-red-500/20 flex items-center justify-center text-amber-300"
+  >
+    ✕
+  </button>
+
+</div>
 
           <div className="space-y-3">
 
@@ -677,7 +725,7 @@ const [showWhatsPopup, setShowWhatsPopup] = useState(false);
             </a>
 
             <a
-              href="tel:9166880202"
+              href="tel:8000865883"
               className="flex items-center justify-between bg-white/5 hover:bg-amber-500/10 rounded-xl p-3 transition-all"
             >
               <div>
@@ -686,7 +734,7 @@ const [showWhatsPopup, setShowWhatsPopup] = useState(false);
                 </div>
 
                 <div className="text-amber-100/50 text-xs">
-                  9166880202
+                  8000865883
                 </div>
               </div>
 
@@ -702,7 +750,13 @@ const [showWhatsPopup, setShowWhatsPopup] = useState(false);
   {/* WHATSAPP CARD */}
   <div className="relative">
     <button
-      onClick={() => setShowWhatsPopup(!showWhatsPopup)}
+      onClick={(e) => {
+  e.stopPropagation();
+
+  setShowCallPopup(false);
+
+  setShowWhatsPopup(!showWhatsPopup);
+}}
       className="w-full flex flex-col items-center justify-center bg-white/5 border border-amber-600/20 rounded-2xl p-5 hover:bg-green-500/10 transition-all duration-300"
     >
       <MessageCircle className="text-green-400 mb-3" size={24} />
@@ -723,12 +777,44 @@ const [showWhatsPopup, setShowWhatsPopup] = useState(false);
     {/* POPUP */}
     <AnimatePresence>
       {showWhatsPopup && (
-        <motion.div
-          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 10, scale: 0.95 }}
-          className="absolute z-50 left-1/2 -translate-x-1/2 mt-3 w-72 bg-stone-900 border border-green-500/20 rounded-2xl p-4 shadow-2xl backdrop-blur-xl"
-        >
+       <motion.div
+  onClick={(e) => e.stopPropagation()}
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  exit={{ opacity: 0, scale: 0.9 }}
+  className="
+    fixed sm:absolute
+    z-[999]
+    left-1/2 top-1/2
+    sm:top-auto
+    sm:mt-3
+    -translate-x-1/2
+    -translate-y-1/2
+    sm:translate-y-0
+    w-[90%] sm:w-72
+    bg-stone-900
+    border border-amber-600/20
+    rounded-3xl
+    p-4
+    shadow-2xl
+    backdrop-blur-xl
+  "
+>
+
+  <div className="flex items-center justify-between mb-4">
+
+  <h3 className="text-amber-300 text-sm font-semibold tracking-wide">
+    Contact Details
+  </h3>
+
+  <button
+    onClick={closeAllPopups}
+    className="w-8 h-8 rounded-full bg-white/5 hover:bg-red-500/20 flex items-center justify-center text-amber-300"
+  >
+    ✕
+  </button>
+
+</div>
 
           <div className="space-y-3">
 
