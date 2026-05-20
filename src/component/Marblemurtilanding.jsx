@@ -1052,7 +1052,7 @@ function InstallAppSection() {
 
   }, []);
 
-  const WEBSITE_URL = "https://bhardwajmurtiart.vercel.app";
+  const WEBSITE_URL = "https://bhardwaj-murti-art.vercel.app/";
 
   return (
 
